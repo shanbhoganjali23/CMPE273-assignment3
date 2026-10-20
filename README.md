@@ -38,21 +38,19 @@ pip install -r requirements.txt
 
 ## Run it
 
-Open two terminals. In both, go to this project folder and run:
+Open two terminals in the project folder.
+
+**First terminal**
 
 ```bash
 source .venv/bin/activate
-```
-
-In the first terminal:
-
-```bash
 python inventory_service.py
 ```
 
-In the second terminal:
+**Second terminal**
 
 ```bash
+source .venv/bin/activate
 python order_service.py
 ```
 
@@ -60,9 +58,10 @@ Inventory Service uses port 5001 and Order Service uses port 5000.
 
 ## Successful order
 
-Run this in a third terminal:
+**Third terminal**
 
 ```bash
+source .venv/bin/activate
 curl -i -X POST http://127.0.0.1:5000/orders \
   -H 'Content-Type: application/json' \
   -d '{"item_id":"keyboard","quantity":2}'
